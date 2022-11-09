@@ -1,0 +1,16 @@
+.gradiantImg{
+  position:relative;
+  display:inline-block;
+}
+.gradiantImg:after {
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  display:inline-block;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #0a7504 0%, rgba(151, 44, 44, 0) 100%);
+}
+.gradiantImg{
+  display:block;
+}

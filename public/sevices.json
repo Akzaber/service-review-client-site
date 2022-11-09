@@ -1,0 +1,45 @@
+[
+  {
+      "service_id": "04",
+      "title": "Football PhotoShop",
+      "img": "https://ibb.co/26k2crT",
+      "price": "200.00",
+      "description": "Modern football photography is agenda-led - getting the shot that suits the narrative. For example, in the Chelsea-Manchester City European final the story was Aguero scoring the winner in his last game. So, photographers focused on Aguero. But it never happens - they often miss the true moment of the game.At a Spurs-Manchester City game around 2010, photographers shot from the corner to await Spurs' goal celebrations. But I wasn't on the guy shooting - I was on the keeper, Joe Hart. Shooting on 85mm lens, I captured the moment Hart dived and tipped the ball around the post. My photo got used in every Sunday paper."
+  },
+  {
+      "service_id": "05",
+      "title": "Basketball PhotoShop",
+      "img": "https://ibb.co/cCPNGZ1",
+      "price": "20.00",
+      "ratings": "4.5",
+      "description": "Basketball is one of my favorite sports to shoot. Raw, unfiltered action happening mere feet away in a confined, well-lit space is a sports photographer's dream. To add to that, the athletes aren't wearing anything to cover their faces or bodies that hide their emotions or body language. The action and emotion are all right in front of you. Basketball is such a dynamic, emotional sport that lends itself well to photography. But, if you need some help getting started, here are my top tips for basketball photography."
+  },
+  {
+      "service_id": "01",
+      "title": "Cricketers PhotoShop",
+      "img": "https://ibb.co/6H6jBgP",
+      "price": "200.00",
+      "description": "Cricket is called a gentleman's game. Many of you have been to a cricket match before right? You can also tell that how much exciting it makes you feels. The atmosphere, bowler's run up, batsman facing etc many other moments are worth capturing."
+  },
+  {
+      "service_id": "02",
+      "title": "Badminton PhotoShop",
+      "img": "https://ibb.co/0Z4CJgh",
+      "price": "150.00",
+      "description": "There are several good spots like the sides of the court, behind billboard, and the position parallel to the umpire. From these locations, photographers are able to shoot every player simultaneously."
+  },
+  {
+      "service_id": "03",
+      "title": "Hockey PhotoShop",
+      "img": "https://ibb.co/xCQv4mT",
+      "price": "30.00",
+      "description": "I am not an expert hockey photographer. I will say that right off the bat. Guys like David Klutho make it seem like it is easy to photograph hockey which it is not. I have drastically improved my hockey images in just a short amount of time though be learning a few key elements to making hockey pictures better."
+  },
+  {
+      "service_id": "06",
+      "title": "Voleyball PhotoShop",
+      "img": "https://ibb.co/5kfLzTQ",
+      "price": "20.00",
+      "description": "Speed is the key to capturing pictures of volleyball games - and by that I mean shutter speed. Generally faster shutter speeds mean sharper focus, simply because most sports action involves quick movements.Imagine the fast spiking and blocking motions as both teams leap to attack the ball, which is why a high shutter speed is necessary to freeze that photograph on the net action. Slower shutter speeds mean action is more likely to blur. These rules apply if you hope to capture good volleyball pictures with your camera."
+  }
+]
