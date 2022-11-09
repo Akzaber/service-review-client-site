@@ -5,7 +5,7 @@ import Reviews from "./Reviews/Reviews";
 
 const ServiceDetail = () => {
   const service = useLoaderData();
-  const { img, title, description, price, ratings, _id } = service;
+  const { img, title, description, price, ratings } = service;
   return (
     <div>
       <div className="card card-compact bg-base-100 shadow-sm my-10 hover:shadow-xl rounded">

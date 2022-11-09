@@ -11,7 +11,7 @@ const Header = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="navbar bg-green-600 text-white lg:px-44">
+    <div className="navbar bg-green-600 text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -53,7 +53,7 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0 font-semibold text-xl">
+        <ul className="menu menu-horizontal p-0 font-semibold">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -63,6 +63,11 @@ const Header = () => {
           <li>
             <Link to="/blog">Blog</Link>
           </li>
+          {user?.email && (
+            <li>
+              <Link to="/userReview">My Review</Link>
+            </li>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
