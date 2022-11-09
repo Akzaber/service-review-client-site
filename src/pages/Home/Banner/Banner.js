@@ -13,10 +13,10 @@ const Banner = () => {
           />
         </div>
         <div>
-          <h1 className="absolute top-1/4 text-white text-6xl font-bold left-10">
+          <h1 className="absolute hidden lg:block top-1/4 text-white text-6xl font-bold left-10">
             Sports Photography <br /> Everything You <br /> Need to Know!
           </h1>
-          <p className="absolute bottom-1/4 w-1/2 left-10 text-white">
+          <p className="absolute hidden lg:block bottom-1/4 w-1/2 left-10 text-white">
             Sports photography is a type of photography that covers every sport
             and sporting event capturing the action of a game and behind the
             scenes of the players.

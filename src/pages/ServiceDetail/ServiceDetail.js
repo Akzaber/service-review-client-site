@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Reviews from "./Reviews/Reviews";
+import AllReview from "./Reviews/Allreview/AllReview";
 
 const ServiceDetail = () => {
   const service = useLoaderData();
@@ -29,6 +30,7 @@ const ServiceDetail = () => {
         </div>
       </div>
       <Reviews service={service}></Reviews>
+      <AllReview></AllReview>
     </div>
   );
 };

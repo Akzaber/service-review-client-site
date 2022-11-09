@@ -45,10 +45,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <Link
-          to="/"
-          className="btn btn-ghost lg:text-2xl text-xl uppercase font-bold"
-        >
+        <Link to="/" className="btn btn-ghost text-xl uppercase font-bold">
           Sports Photograper
         </Link>
       </div>
