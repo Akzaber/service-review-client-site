@@ -48,7 +48,7 @@ const NewSection = () => {
               bowler start running and throw the ball, you can get the perfect
               picture of that. Just you have to take some time.
             </p>
-            <button className="px-4 py-2 rounded bg-green-600 text-white">
+            <button className="px-4 py-2 font-semibold rounded bg-green-600 text-white">
               <Link to="/services">See more</Link>
             </button>
           </div>
