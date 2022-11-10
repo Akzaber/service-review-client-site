@@ -3,6 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Reviews from "./Reviews/Reviews";
 import AllReview from "./Reviews/Allreview/AllReview";
+import "react-photo-view/dist/react-photo-view.css";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const ServiceDetail = () => {
   const service = useLoaderData();
@@ -10,9 +12,16 @@ const ServiceDetail = () => {
   return (
     <div>
       <div className="card card-compact bg-base-100 shadow-sm my-10 hover:shadow-xl rounded">
-        <figure>
-          <img className="w-full" src={img} alt="Shoes" />
-        </figure>
+        <PhotoProvider>
+          <PhotoView src={img}>
+            <img
+              className="w-full md:h-[400px]"
+              src={img}
+              style={{ objectFit: "cover" }}
+              alt=""
+            />
+          </PhotoView>
+        </PhotoProvider>
         <div className="card-body w-full">
           <h2 className="card-title text-black">{title}</h2>
           <div className="flex justify-between text-black">

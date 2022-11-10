@@ -1,14 +1,23 @@
 import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "react-photo-view/dist/react-photo-view.css";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const ShowServices = ({ service }) => {
   const { title, img, price, ratings, _id, description } = service;
   return (
     <div className="card card-compact bg-base-100 shadow-sm hover:shadow-xl rounded">
-      <figure>
-        <img className="md:h-[350px] w-full" src={img} alt="Shoes" />
-      </figure>
+      <PhotoProvider>
+        <PhotoView src={img}>
+          <img
+            className="w-full md:h-[400px]"
+            src={img}
+            style={{ objectFit: "cover" }}
+            alt=""
+          />
+        </PhotoView>
+      </PhotoProvider>
       <div className="card-body w-full">
         <h2 className="card-title text-black">{title}</h2>
         <div className="flex justify-between text-black">

@@ -96,9 +96,10 @@ const Login = () => {
             <button
               type="submit"
               onClick={handleGoogleSignIn}
-              className="px-4 py-2 bg-green-600 rounded text-white font-semibold flex justify-center items-center"
+              className="px-4 py-2 bg-green-600 rounded text-white flex justify-center items-center"
             >
-              <FaGoogle className="mr-2"></FaGoogle>Continue With Google
+              <FaGoogle className="mr-2 font-bold"></FaGoogle>Continue With
+              Google
             </button>
           </form>
         </div>

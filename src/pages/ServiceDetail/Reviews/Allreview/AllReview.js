@@ -7,7 +7,7 @@ const AllReview = () => {
   const [allReview, setAllReview] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://assignment-11-server-side-seven.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setAllReview(data));
   }, []);
@@ -15,9 +15,12 @@ const AllReview = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete review");
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://assignment-11-server-side-seven.vercel.app/reviews/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount === 1) {

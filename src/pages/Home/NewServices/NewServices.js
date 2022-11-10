@@ -7,7 +7,9 @@ const NewServices = () => {
   const [newService, setNewService] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/newServices?email=${user?.email}`)
+    fetch(
+      `https://assignment-11-server-side-seven.vercel.app/newServices?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setNewService(data));
   }, [user?.email]);
