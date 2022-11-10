@@ -78,7 +78,7 @@ const AllReview = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">{review.serviceName}</div>
+                      <div className="font-bold">{review.customerName}</div>
                       <div className="text-sm opacity-50">{review.email}</div>
                     </div>
                   </div>
@@ -99,8 +99,6 @@ const AllReview = () => {
                   >
                     message
                   </label>
-
-                  {/* Put this part before </body> tag */}
                   <input
                     type="checkbox"
                     id="my-modal-3"

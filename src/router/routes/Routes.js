@@ -6,6 +6,7 @@ import Register from "../../pages/Login/Register/Register";
 import ServiceAll from "../../pages/Service/ServiceAll";
 import ServiceDetail from "../../pages/ServiceDetail/ServiceDetail";
 import UsersReview from "../../pages/UsersReview/UsersReview";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/userReview",
-        element: <UsersReview></UsersReview>,
+        element: (
+          <PrivateRoute>
+            <UsersReview></UsersReview>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/services/:id",

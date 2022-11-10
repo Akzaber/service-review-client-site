@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
@@ -73,7 +74,15 @@ const Header = () => {
             <>
               <div className="avatar mr-3 hidden lg:block">
                 <div className="w-10 rounded-full">
-                  <img src={user?.photoURL} alt="" />
+                  {user?.photoURL ? (
+                    <>
+                      <img src={user?.photoURL} alt="" />
+                    </>
+                  ) : (
+                    <>
+                      <FaUser></FaUser>
+                    </>
+                  )}
                 </div>
               </div>
             </>
@@ -83,14 +92,14 @@ const Header = () => {
           <>
             <button
               onClick={handleLogOut}
-              className="bg-white font-semibold text-green-600 px-4 py-2 rounded"
+              className="bg-white font-semibold text-green-600 px-1 py-1 rounded"
             >
-              <Link>Log Out</Link>
+              Log Out
             </button>
           </>
         ) : (
           <>
-            <button className="bg-white font-semibold text-green-600 px-4 py-2 rounded">
+            <button className="bg-white font-semibold text-green-600 px-1 py-1 rounded">
               <Link to="/login">Login</Link>
             </button>
           </>

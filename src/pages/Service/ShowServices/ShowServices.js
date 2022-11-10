@@ -3,7 +3,7 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ShowServices = ({ service }) => {
-  const { title, img, price, ratings, _id } = service;
+  const { title, img, price, ratings, _id, description } = service;
   return (
     <div className="card card-compact bg-base-100 shadow-sm hover:shadow-xl rounded">
       <figure>
@@ -22,6 +22,7 @@ const ShowServices = ({ service }) => {
             {ratings}
           </span>
         </div>
+        <p>{`${description.slice(0, 100)}...`}</p>
         <div className="card-actions justify-end">
           <button className="bg-green-600 text-white font-semibold uppercase rounded px-4 py-2">
             <Link to={`/services/${_id}`}>View Detailes</Link>

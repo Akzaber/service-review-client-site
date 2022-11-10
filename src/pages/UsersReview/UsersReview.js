@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
-import { FaUser } from "react-icons/fa";
+import { FaEdit, FaUser } from "react-icons/fa";
 
 const UsersReview = () => {
   const { user } = useContext(AuthContext);
@@ -11,13 +11,36 @@ const UsersReview = () => {
       .then((res) => res.json())
       .then((data) => setUserReview(data));
   }, [user?.email]);
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure, you want to delete review");
+    if (proceed) {
+      fetch(`http://localhost:5000/reviews/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount === 1) {
+            alert("Deleted Confirm");
+            const remaining = userReview.filter((review) => review._id !== id);
+            setUserReview(remaining);
+          }
+          console.log(data);
+        })
+        .catch((err) => console.error(err));
+    }
+  };
   return (
     <div>
       {userReview?.length === 0 && (
         <>
-          <h1 className="text-2xl text-red-600 fornt-semibold min-h-screen items-center justify-center">
-            No Review Found
-          </h1>
+          <div className="hero min-h-screen text-2xl text-red-600 fornt-semibold">
+            <div className="hero-content text-center">
+              <div className="max-w-md">
+                <h1 className="text-5xl font-bold">No Review Found</h1>
+              </div>
+            </div>
+          </div>
         </>
       )}
       {userReview.map((review) => (
@@ -25,10 +48,16 @@ const UsersReview = () => {
           <table className="table w-full">
             <thead>
               <tr>
-                <th className="mx-0">
-                  <label>
-                    <button className="btn btn-ghost">X</button>
-                  </label>
+                <th>
+                  <button
+                    onClick={() => handleDelete(review._id)}
+                    className="btn btn-ghost"
+                  >
+                    X
+                  </button>
+                  <button className="btn btn-ghost">
+                    <FaEdit></FaEdit>
+                  </button>
                 </th>
                 <th>ServiceName</th>
                 <th>Price</th>
@@ -77,8 +106,6 @@ const UsersReview = () => {
                   >
                     message
                   </label>
-
-                  {/* Put this part before </body> tag */}
                   <input
                     type="checkbox"
                     id="my-modal-3"
