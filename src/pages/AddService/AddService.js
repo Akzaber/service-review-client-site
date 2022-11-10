@@ -1,8 +1,16 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
+
+  const showToastMessage = () => {
+    toast.success("SuccessFully Added", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
 
   const handleAddService = (event) => {
     event.preventDefault();
@@ -14,6 +22,30 @@ const AddService = () => {
     const email = form.email.value;
     const description = form.text.value;
     console.log(serviceName, price, picture, email, description);
+
+    const newService = {
+      serviceName: serviceName,
+      price: price,
+      img: picture,
+      email: email,
+      description: description,
+    };
+
+    fetch("http://localhost:5000/newServices", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newService),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged === true) {
+          showToastMessage();
+        }
+        console.log(data);
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
@@ -62,6 +94,7 @@ const AddService = () => {
             type="submit"
             value="Add Service"
           />
+          <ToastContainer></ToastContainer>
         </div>
       </form>
     </div>
