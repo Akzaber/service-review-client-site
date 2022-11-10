@@ -46,7 +46,7 @@ const Reviews = ({ service }) => {
       <h2 className="text-2xl font-semibold text-green-600 uppercase">
         Add your Review here..!
       </h2>
-      <h4>
+      <>
         {user?.email ? (
           <></>
         ) : (
@@ -59,7 +59,7 @@ const Reviews = ({ service }) => {
             </h3>
           </>
         )}
-      </h4>
+      </>
       <form onSubmit={handleReview}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <input

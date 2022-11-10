@@ -62,9 +62,14 @@ const Header = () => {
             <Link to="/blog">Blog</Link>
           </li>
           {user?.email && (
-            <li>
-              <Link to="/userReview">My Review</Link>
-            </li>
+            <>
+              <li>
+                <Link to="/userReview">My Review</Link>
+              </li>
+              <li>
+                <Link to="/addservice">Add Service</Link>
+              </li>
+            </>
           )}
         </ul>
       </div>

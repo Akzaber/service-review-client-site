@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { FaEdit, FaUser } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const UsersReview = () => {
   const { user } = useContext(AuthContext);
@@ -12,6 +14,12 @@ const UsersReview = () => {
       .then((data) => setUserReview(data));
   }, [user?.email]);
 
+  const showToastMessage = () => {
+    toast.success("Deleted SuccessFully", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
+
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete review");
     if (proceed) {
@@ -21,7 +29,7 @@ const UsersReview = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount === 1) {
-            alert("Deleted Confirm");
+            showToastMessage();
             const remaining = userReview.filter((review) => review._id !== id);
             setUserReview(remaining);
           }
@@ -31,7 +39,7 @@ const UsersReview = () => {
     }
   };
   return (
-    <div>
+    <div className="min-h-screen">
       {userReview?.length === 0 && (
         <>
           <div className="hero min-h-screen text-2xl text-red-600 fornt-semibold">
@@ -45,6 +53,7 @@ const UsersReview = () => {
       )}
       {userReview.map((review) => (
         <div className="overflow-x-auto w-full my-10" key={review._id}>
+          <ToastContainer></ToastContainer>
           <table className="table w-full">
             <thead>
               <tr>

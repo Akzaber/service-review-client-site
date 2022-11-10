@@ -34,7 +34,7 @@ const AllReview = () => {
     <div>
       {allReview?.length === 0 && (
         <>
-          <h1 className="text-2xl text-red-600 fornt-semibold">
+          <h1 className="text-2xl text-red-600 fornt-semibold mb-4">
             No Review Found
           </h1>
         </>
