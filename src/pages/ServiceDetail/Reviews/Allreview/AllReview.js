@@ -11,18 +11,46 @@ const AllReview = () => {
       .then((res) => res.json())
       .then((data) => setAllReview(data));
   }, []);
-  console.log(allReview);
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure, you want to delete review");
+    if (proceed) {
+      fetch(`http://localhost:5000/reviews/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount === 1) {
+            alert("Deleted Confirm");
+            const remaining = allReview.filter((review) => review._id !== id);
+            setAllReview(remaining);
+          }
+          console.log(data);
+        })
+        .catch((err) => console.error(err));
+    }
+  };
   return (
     <div>
+      {allReview?.length === 0 && (
+        <>
+          <h1 className="text-2xl text-red-600 fornt-semibold">
+            No Review Found
+          </h1>
+        </>
+      )}
       {allReview.map((review) => (
         <div className="overflow-x-auto w-full my-10" key={review._id}>
           <table className="table w-full">
             <thead>
               <tr>
                 <th className="mx-0">
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
+                  <button
+                    onClick={() => handleDelete(review._id)}
+                    className="btn btn-ghost"
+                  >
+                    X
+                  </button>
                 </th>
                 <th>ServiceName</th>
                 <th>Price</th>

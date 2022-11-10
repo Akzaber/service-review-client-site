@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const Reviews = ({ service }) => {
@@ -51,7 +52,10 @@ const Reviews = ({ service }) => {
         ) : (
           <>
             <h3 className="text-2xl font-semibold text-red-600">
-              Please Log in to add the Review
+              Please Log in to add the Review{" "}
+              <Link className="underline text-black" to="/login">
+                Login now
+              </Link>
             </h3>
           </>
         )}
@@ -82,7 +86,7 @@ const Reviews = ({ service }) => {
         ></textarea>
         <div className="flex justify-end">
           <input
-            className="px-4 py-2 bg-green-600 text-white rounded uppercase"
+            className="px-4 py-2 bg-green-600 text-white rounded"
             type="submit"
             value="Add Review"
           />

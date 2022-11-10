@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import { FaUser } from "react-icons/fa";
 
 const UsersReview = () => {
   const { user } = useContext(AuthContext);
@@ -12,6 +13,13 @@ const UsersReview = () => {
   }, [user?.email]);
   return (
     <div>
+      {userReview?.length === 0 && (
+        <>
+          <h1 className="text-2xl text-red-600 fornt-semibold min-h-screen items-center justify-center">
+            No Review Found
+          </h1>
+        </>
+      )}
       {userReview.map((review) => (
         <div className="overflow-x-auto w-full my-10" key={review._id}>
           <table className="table w-full">
@@ -19,7 +27,7 @@ const UsersReview = () => {
               <tr>
                 <th className="mx-0">
                   <label>
-                    <input type="checkbox" className="checkbox" />
+                    <button className="btn btn-ghost">X</button>
                   </label>
                 </th>
                 <th>ServiceName</th>
@@ -33,14 +41,22 @@ const UsersReview = () => {
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src={user?.photoURL}
-                          alt="Avatar Tailwind CSS Component"
-                        />
+                        {user?.photoURL ? (
+                          <>
+                            <img
+                              src={user?.photoURL}
+                              alt="Avatar Tailwind CSS Component"
+                            />
+                          </>
+                        ) : (
+                          <>
+                            <FaUser></FaUser>
+                          </>
+                        )}
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">{user?.displayName}</div>
+                      <div className="font-bold">{review?.customerName}</div>
                       <div className="text-sm opacity-50">{user?.email}</div>
                     </div>
                   </div>
